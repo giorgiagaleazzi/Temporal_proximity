@@ -1,0 +1,23 @@
+# ----------------------------------------------------------
+# pipeline_config.yml
+# Project: When Financial Markets Catch a Cold
+# Author:  Giorgia Galeazzi
+# ----------------------------------------------------------
+
+paths:
+  raw_data:   "data/raw"
+  clean_data: "data/clean"
+  plots:      "output/plots"
+  tables:     "output/tables"
+  latex:      "output/latex"
+  logs:       "output/logs"
+  
+sample:
+  start_date: "2000-01-01"
+  end_date:   "2026-01-31"
+
+parameters:
+  stress_vix_threshold:  25
+  stress_vix_percentile: 80
+  min_trading_days:      15
+  random_seed:           42
