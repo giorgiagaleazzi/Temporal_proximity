@@ -327,12 +327,11 @@ monthly_panel %>%
 ## Citation
 
 ```
-Galeazzi, G. (2026). When Financial Markets Catch a Cold: Market-Based Finance,
-Time Zones, and Financial Contagion. Working Paper, University of Glasgow.
+
 ```
 
 ---
 
 ## Contact
 
-Giorgia Galeazzi — University of Glasgow  
+Giorgia Galeazzi — Office for National Statistics - giorgia.galeazzi@ons.gov.uk galeazzi.giorgia@gmail.com
