@@ -1,0 +1,97 @@
+# ----------------------------------------------------------
+# config.R
+# Project: When Financial Markets Catch a Cold
+# Author:  Giorgia Galeazzi
+# Usage:   cfg must be loaded before sourcing this file
+# ----------------------------------------------------------
+
+# ----------------------------------------------------------
+# 1. Paths
+# ----------------------------------------------------------
+
+RAW_DIR    <- cfg$paths$raw_data
+CLEAN_DIR  <- cfg$paths$clean_data
+PLOTS_DIR  <- cfg$paths$plots
+TABLES_DIR <- cfg$paths$tables
+
+# ----------------------------------------------------------
+# 2. Sample period
+# ----------------------------------------------------------
+
+SAMPLE_START <- as.Date(cfg$sample$start_date)
+SAMPLE_END   <- as.Date(cfg$sample$end_date)
+
+# ----------------------------------------------------------
+# 3. Parameters
+# ----------------------------------------------------------
+
+STRESS_VIX_THRESHOLD  <- cfg$parameters$stress_vix_threshold
+STRESS_VIX_PERCENTILE <- cfg$parameters$stress_vix_percentile
+MIN_TRADING_DAYS      <- cfg$parameters$min_trading_days
+LATEX_DIR <- cfg$paths$latex
+
+set.seed(cfg$parameters$random_seed)
+
+# ----------------------------------------------------------
+# 4. Create output directories
+# ----------------------------------------------------------
+
+for (d in c(RAW_DIR, CLEAN_DIR, PLOTS_DIR, TABLES_DIR, LATEX_DIR, cfg$paths$logs)) {
+  dir.create(d, recursive = TRUE, showWarnings = FALSE)
+}
+# ----------------------------------------------------------
+# 5. I/O helpers
+# ----------------------------------------------------------
+
+save_raw <- function(data, file) {
+  path <- file.path(RAW_DIR, file)
+  readr::write_csv(data, path)
+  message("  saved -> ", path)
+  invisible(path)
+}
+
+save_clean <- function(data, file) {
+  path <- file.path(CLEAN_DIR, file)
+  readr::write_csv(data, path)
+  message("  saved -> ", path)
+  invisible(path)
+}
+
+load_raw <- function(file, ...) {
+  readr::read_csv(file.path(RAW_DIR, file), show_col_types = FALSE, ...)
+}
+
+load_clean <- function(file, ...) {
+  readr::read_csv(file.path(CLEAN_DIR, file), show_col_types = FALSE, ...)
+}
+
+save_plot <- function(plot, file, width = 8, height = 5, dpi = 300) {
+  path <- file.path(PLOTS_DIR, file)
+  ggplot2::ggsave(path, plot = plot, width = width, height = height, dpi = dpi)
+  message("  saved -> ", path)
+  invisible(path)
+}
+
+save_table <- function(text, file) {
+  path <- file.path(TABLES_DIR, file)
+  writeLines(text, path)
+  message("  saved -> ", path)
+  invisible(path)
+}
+
+save_latex <- function(text, file) {
+  path <- file.path(LATEX_DIR, file)
+  writeLines(text, path)
+  message("  saved -> ", path)
+  invisible(path)
+}
+
+# ----------------------------------------------------------
+# 6. Startup message
+# ----------------------------------------------------------
+
+message("✓ config.R loaded.")
+message("  Sample               : ", format(SAMPLE_START, "%Y"), " - ", format(SAMPLE_END, "%Y"))
+message("  VIX threshold        : ", STRESS_VIX_THRESHOLD)
+message("  VIX percentile       : ", STRESS_VIX_PERCENTILE)
+message("  Min trading days     : ", MIN_TRADING_DAYS)
