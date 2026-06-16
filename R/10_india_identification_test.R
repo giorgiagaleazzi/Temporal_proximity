@@ -95,8 +95,6 @@ fig_india <- ggplot(jumps, aes(overlap_share, stress_jump_fe)) +
   theme(legend.position = "bottom")
 
 print(fig_india)
-ggsave("fig_india_test.png", fig_india, width = 8, height = 5.5, dpi = 300)
-
 save_plot(fig_india, "fig_india_identification_test.png", width=14, height=7)
 message("✓ Saved fig_india_identification_test.png")
 
