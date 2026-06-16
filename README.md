@@ -1,7 +1,7 @@
 # When Markets Trade Together
 ### Temporal Proximity and Financial Stability
 
-**Author:** Giorgia Galeazzi, University of Glasgow  
+**Author:** Giorgia Galeazzi, University of Glasgow | Office for National Statistics
 **Status:** Working paper — first draft complete, 10-market extended sample  
 **Date:** June 2026
 
