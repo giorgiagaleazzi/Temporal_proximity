@@ -1,5 +1,5 @@
-# When Financial Markets Catch a Cold
-### Market-Based Finance, Time Zones, and Financial Contagion
+# When Markets Trade Together
+### Temporal Proximity and Financial Stability
 
 **Author:** Giorgia Galeazzi, University of Glasgow  
 **Status:** Working paper — first draft complete, 10-market extended sample  
