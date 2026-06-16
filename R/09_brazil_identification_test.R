@@ -95,7 +95,6 @@ fig_brazil <- ggplot(jumps, aes(overlap_share, stress_jump_fe)) +
   theme(legend.position = "bottom")
 
 print(fig_brazil)
-ggsave("fig_brazil_test.png", fig_brazil, width = 8, height = 5.5, dpi = 300)
 
 save_plot(fig_brazil, "fig_brazil_identification_test.png", width=14, height=7)
 message("✓ Saved fig_brazil_identification_test.png")
