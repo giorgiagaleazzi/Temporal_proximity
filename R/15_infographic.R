@@ -195,7 +195,7 @@ cat_colors <- c(
   "complete" = "#c85a1a"
 )
 
-p_snapshot <- ggplot(overlap_lower, aes(x=j, y=fct_rev(i))) +
+p_snapshot <- ggplot(overlap_lower, aes(x=j, y=factor(i, levels=rev(codes_order)))) +
   geom_tile(fill="#f5f7fa", color="white", linewidth=0.8) +
   geom_point(data=filter(overlap_lower, !is.na(overlap)),
              aes(colour=overlap_cat, size=overlap), shape=16) +
@@ -297,7 +297,7 @@ p_title <- ggplot() +
            color=col_accent, size=5, hjust=0.5, fontface="italic") +
   annotate("label", x = 0.5, y = 0.08,
            label = "\u23F0  Time is a channel: Markets open together, move together.",
-           color = col_text, fill = "#e8f0f8", size = 3.5, hjust = 0.5,
+           fill = "#e8f0f8", size = 3.5, hjust = 0.5,
            label.padding = unit(0.4, "lines"), label.r = unit(0.3, "lines"),
            colour = col_accent) +
   xlim(0,1) + ylim(0,1) +
