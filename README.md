@@ -9,7 +9,7 @@
 
 ## Overview
 
-This repository contains the full replication pipeline for the working paper *When Financial Markets Catch a Cold: Market-Based Finance, Time Zones, and Financial Contagion*.
+This repository contains the full replication pipeline for the working paper *When Markets Trade Together: Temporal Proximity and Financial Stability*.
 
 The paper introduces **trading-hour overlap** as a novel structural channel of international financial contagion. Using daily equity return data for **ten major global financial centres** over 2008–2026, it shows that markets trading simultaneously experience significantly stronger comovement during periods of global financial stress — even after controlling for market-pair fixed effects and common global shocks.
 
